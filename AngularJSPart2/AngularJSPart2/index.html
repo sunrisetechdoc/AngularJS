@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SS - AngularJS - Part 2</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
+
+    <style>
+        .happy{
+            background-color:yellowgreen;
+            color:navy;
+            font-weight:bold;
+        }
+
+        .unhappy{
+            background-color:maroon;
+            color:whitesmoke;
+            font-style:italic;
+        }
+    </style>
+</head>
+
+<!--ng-init example-->
+<!--<body ng-app="" ng-init="fname='Saravanan'">
+    <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="fname" /></p>
+    <h1>Welcome {{fname}}</h1>
+</body>-->
+
+<!--ng-bind-template example-->
+<!--<body ng-app="" ng-init="fname='Saravanan'">
+    <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="fname" /></p>
+    <p>Last Name : <input type="text" placeholder="Enter your last name" ng-model="lname" /></p>
+    <h1 ng-bind-template="Welcome {{fname}} {{lname}}"></h1>
+</body>-->
+
+<!--ng-non-bindable example-->
+<!--<body ng-app="" ng-init="fname='Saravanan'">
+    <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="fname" /></p>
+    <p>Last Name : <input type="text" placeholder="Enter your last name" ng-model="lname" /></p>
+    <h1 ng-bind-template="Welcome {{fname}} {{lname}}"></h1>
+    <p ng-non-bindable>Welcome {{fname}} {{lname}}</p>
+</body>-->
+
+<!--ng-controller example 1-->
+<!--<body ng-app="ssApp">
+    <script>
+        var ssApp = angular.module("ssApp", []);
+        
+        ssApp.controller("ssPart2Controller", ["$scope",
+        function ($scope) {
+        
+            $scope.model = {};
+
+            $scope.initialze = function () {
+                $scope.model.fname = 'Saravanan';
+            }
+        }])
+    </script>
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>Last Name : <input type="text" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <h1>Welcome {{model.fname}} {{model.lname}}</h1>
+    </div>
+</body>-->
+
+<!--ng-controller example 2-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>Last Name : <input type="text" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <h1>Welcome {{model.fname}} {{model.lname}}</h1>
+    </div>
+</body>-->
+
+<!--ng-bind-html example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p ng-bind-html="htmlCnt"></p>        
+    </div>
+</body>-->
+
+<!--ng-change example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>Last Name : <input type="text" ng-change="lnameChange()" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <h1>Welcome {{model.fname}} {{model.lname}}</h1>
+    </div>
+</body>-->
+
+<!--ng-checked example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>Happy with AngularJS Training <input type="checkbox" ng-checked="model.happy" /></p>
+        <p>{{model.happy}}</p>
+        <p>Checkbox with ng-model property <input type="checkbox" ng-model="model.happy" /></p>
+    </div>
+</body>-->
+
+<!--ng-class example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>Checkbox for ng-class <input type="checkbox" ng-model="model.happy" /></p>
+        <div ng-class="{happy:model.happy==true,unhappy:model.happy!=true}">
+            Sample Content for ng-class
+        </div>
+    </div>
+</body>-->
+
+<!--ng-cloak example-->
+<!--<body ng-app="ssApp" ng-cloak>
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>Checkbox for ng-class <input type="checkbox" ng-model="model.happy" /></p>
+        <div ng-class="{happy:model.happy==true,unhappy:model.happy!=true}">
+            Sample Content for ng-class
+        </div>
+    </div>
+</body>-->
+
+<!--ng-click example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>Last Name : <input type="text" ng-change="lnameChange()" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <h1>Welcome {{model.fname}} {{model.lname}}</h1>
+        <button ng-click="Submit()">Submit</button>
+    </div>
+</body>-->
+
+<!--ng-disabled example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input type="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>Last Name : <input type="text" ng-disabled="model.lnameDisabled" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <h1>Welcome {{model.fname}} {{model.lname}}</h1>
+        <p>Disable last name by checkbox status <input type="checkbox" ng-model="model.lnameDisabled" /></p>
+    </div>
+</body>-->
+
+<!--ng-form example-->
+<!--<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()" ng-form="part2Form">
+        <p>First Name : <input name="fname" type="text" ng-disabled="model.happy==false" placeholder="Enter your first name" ng-model="model.fname" /></p>
+        <p>dirty:{{part2Form.fname.$dirty}},touched:{{part2Form.fname.$touched}},untouched:{{part2Form.fname.$untouched}}</p>
+
+        <p>Last Name : <input name="lname" type="text" ng-disabled="model.happy==false" ng-change="lnameChange()" placeholder="Enter your last name" ng-model="model.lname" /></p>
+        <p>dirty:{{part2Form.lname.$dirty}},touched:{{part2Form.lname.$touched}},untouched:{{part2Form.lname.$untouched}}</p>
+
+        <p>Happy with AngularJS Training <input type="checkbox" ng-model="model.happy" /></p>
+
+        <button ng-click="Submit()">Submit</button>    
+        
+        <p>dirty:{{part2Form.$dirty}}</p>    
+        <p>valid:{{part2Form.$valid}}</p>    
+        <p>error:{{part2Form.$errors}}</p>    
+        <p>pristine:{{part2Form.$pristine}}</p>
+
+    </div>
+</body>-->
+
+<body ng-app="ssApp" ng-init="trainer='Saravanan S'">
+    <script src="App/app.js"></script>
+
+    <script src="App/controllers/controllers.js"></script>
+    
+    <!--ng-include example 1-->
+    <!--<div ng-include="'App/views/header.html'"></div>-->
+
+    <!--ng-include example 2-->
+    <ng-include src="'App/views/header.html'"></ng-include>
+
+    <div ng-controller="ssPart2Controller" ng-init="initialze()">
+        <p>First Name : <input ype="text" placeholder="Enter your first name" ng-model="model.fname" /></p>
+
+        <p>Last Name : <input type="text" placeholder="Enter your last name" ng-model="model.lname" /></p>
+
+        <p>Happy with AngularJS Training <input type="checkbox" ng-model="model.happy" /></p>
+
+        <button ng-click="Submit()">Submit</button>    
+    </div>
+</body>
+</html>

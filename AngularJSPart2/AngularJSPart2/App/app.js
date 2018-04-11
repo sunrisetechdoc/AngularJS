@@ -1,0 +1,1 @@
+﻿var ssApp = angular.module("ssApp", ["ngSanitize"]);
