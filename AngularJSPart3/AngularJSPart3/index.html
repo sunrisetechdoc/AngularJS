@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SS - AngularJS - Part 3</title>
+    <meta charset="utf-8" />
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .odd{
+            background-color:red;
+        }
+
+        .even{
+            background-color:gray;
+        }
+    </style>
+</head>
+
+<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+
+    <div ng-controller="ssPart3Controller" ng-init="initialze()" class="container">
+
+        <!--ng-if example-->
+        <!--<label>Show the details <input type="checkbox" ng-model="showMe" /></label>
+        <div ng-if="showMe">
+            <h1>The section will be rendered based on the input checkbox above</h1>
+        </div>-->
+
+        <!--ng-switch example-->
+        <!--<ul>
+            <li><a href="javascript:;" ng-click="page='info'">Personal Info</a></li>
+            <li><a href="javascript:;" ng-click="page='address'">Address Details</a></li>
+            <li><a href="javascript:;" ng-click="page='about'">About Me</a></li>
+        </ul>
+
+        <div ng-switch on="page">
+            <div ng-switch-when="info">
+                <h1>Personal Information Page</h1>
+            </div>
+            <div ng-switch-when="address">
+                <h1>Address Details Page</h1>
+            </div>
+            <div ng-switch-when="about">
+                <h1>About My Self Page</h1>
+            </div>
+            <div ng-switch-default>
+                <h1>This is default page</h1>
+            </div>
+        </div>-->
+
+        <!--ng-readonly example-->
+        <!--<div class="row">
+            <label>Make it readonly <input type="checkbox" ng-model="makeReadOnly" /></label>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" ng-readonly="makeReadOnly" placeholder="Enter First name" />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last name" />
+                </div>
+            </div>
+        </div>-->
+
+        <!--ng-repeat example-->
+        <!--<div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>S. No</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Designation</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in employees">
+                        <td>{{$index+1}}</td>
+                        <td>{{emp.FirstName}}</td>
+                        <td>{{emp.LastName}}</td>
+                        <td>{{emp.Designation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+
+        <!--ng-show ng-hide example-->
+        <!--<div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <label>Show details <input type="checkbox" ng-model="show" /></label>
+                </div>
+                <div class="row" ng-show="show">
+                    <h1>Section will be visible based on above show details checkbox</h1>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <label>Hide details <input type="checkbox" ng-model="hide" /></label>
+                </div>
+                <div class="row" ng-hide="hide">
+                    <h1>Section will be hidden based on above hide details checkbox</h1>
+                </div>
+            </div>
+        </div>-->
+
+        <!--ng-src example-->
+        <!--<div class="row">
+            <div class="col-lg-6 form-group">
+                <label>Fruits</label>
+                <select class="form-control" ng-model="fruit">
+                    <option value="assets/fruits/apple.jpg">Apple</option>
+                    <option value="assets/fruits/banana.jpg">Banana</option>
+                    <option value="assets/fruits/kiwi.jpg">Kiwi</option>
+                    <option value="assets/fruits/mango.jpg">Mango</option>
+                    <option value="assets/fruits/pomogranite.png">Pomogranite</option>
+                    <option value="assets/fruits/strawberry.jpg">Strawberry</option>
+                    <option value="assets/fruits/watermellon.jpg">Watermellon</option>
+                </select>
+            </div>
+            <div class="col-lg-6">
+                <img ng-src="{{fruit}}" />
+            </div>
+        </div>-->
+
+        <!--ng-submit example-->
+        <!--<div class="row">
+            <form ng-submit="mysubmit()">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" ng-model="model.FirstName" placeholder="Enter First Name..." />
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" ng-model="model.LastName" placeholder="Enter Last Name..." />
+                </div>
+                <div class="form-group">
+                    <label>Designation</label>
+                    <input type="text" ng-model="model.Designation" placeholder="Enter Designation..." />
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>-->
+
+        <!--ng-value example-->
+        <!--<div class="row">
+            <label ng-repeat="name in names" for="{{name}}">
+                {{name}}
+                <input type="radio" ng-model="favorite.color" ng-value="name"
+                       id="{{name}}" name="color">
+            </label>
+        </div>
+        <div class="row">
+            <div style="font-family:Arial;color:red;background:steelblue;padding:3px;width:350px;">
+                You Selected - {{favorite.color}}
+            </div>
+        </div>-->
+
+        <!--ng-required example-->
+        <!--<div>
+            <form name="myform">
+                <div class="row">
+                    <label>Make as required <input type="checkbox" ng-model="IsRequired" /></label>
+                </div>
+                <div class="row">
+                    <label>This field is required by condition</label>
+                    <input type="text" name="firstname" ng-required="IsRequired" ng-model="Firstname" />
+                </div>
+                <div class="row">
+                    <span class="alert alert-danger" ng-if="myform.firstname.$error.required">
+                        This field is required
+                    </span>
+                </div>
+            </form>
+        </div>-->
+
+        <!--ng-style example-->
+        <!--<div>
+            <span style="font-family:Arial;padding:3px;width:350px;" 
+                  ng-style="myStyle">http://www.google.com</span>
+            <br /><br />
+            <input type="button" class="btn btn-primary" value="Set Color" ng-click="myStyle={color:'red'}">
+        </div>-->
+        
+        <!--ng-pattern ng-minlength ng-maxlength example-->
+        <!--<div>
+            <form name="myform">
+                <input type="text" ng-model="pattern" id="pattern" />
+                <br />
+                <input type="text" ng-model="FirstName" id="input" name="input" 
+                       ng-pattern="pattern" ng-maxlength="5" ng-minlength="3" />
+                <p style="font-family:Arial;color:red;background:steelblue;padding:3px;width:350px;"
+                   ng-show='!myform.input.$valid'>Invalid Input</p>    
+                <p style="font-family:Arial;color:red;background:steelblue;padding:3px;width:350px;"
+                   ng-show='myform.input.$error.maxlength'>Value is exceeding limit</p>    
+                <p style="font-family:Arial;color:red;background:steelblue;padding:3px;width:350px;"
+                   ng-show='myform.input.$error.minlength'>Value is expecting minimum length</p>  
+            </form>
+        </div>-->
+
+        <!--ng-options example-->
+        <!--<div>
+            <select ng-model="selectedEmp" ng-options="emp.FirstName+' '+emp.LastName+'('+emp.Designation+')' for emp in employees">
+            </select>
+
+            <p>
+                {{selectedEmp | json}}
+            </p>
+        </div>-->
+
+        <!--ng-class-odd ng-class-even example-->
+        <!--<div>
+            <div ng-repeat="emp in employees">
+                <p ng-class-odd="'odd'" ng-class-even="'even'">
+                    {{emp.FirstName}}
+                </p>
+            </div>
+        </div>-->
+
+        <!--ng-cut ng-copy ng-paste example-->
+        <!--<div>
+            <div class="row">
+                <label>Input for Cut</label>
+                <input type="text" ng-cut="TriggerCut()" ng-model="cutModel" />
+            </div>
+            <div class="row">
+                <label>Input for Copy</label>
+                <input type="text" ng-copy="TriggerCopy()" ng-model="copyModel" />
+            </div>
+            <div class="row">
+                <label>Input for Paste</label>
+                <input type="text" ng-paste="TriggerPaste()" ng-model="pasteModel" />
+            </div>
+            <div class="row">
+                <ul>
+                    <li ng-repeat="event in events">{{event.name}}</li>
+                </ul>
+            </div>
+        </div>-->
+        
+        <!--ng-list example-->
+        <div>
+            <div class="row">
+                <label>List: <input name="colorInput" ng-model="color" 
+                                    ng-list required></label>
+            </div>
+            <div class="row">
+                {{color | json}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
