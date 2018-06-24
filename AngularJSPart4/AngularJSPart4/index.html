@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SS - AngularJS - Part 4</title>
+    <meta charset="utf-8" />
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+    <!--rootscope example-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>Root Scope Example:</h1>
+        <div class="form-group">
+            <label>Root Scope Value : </label>
+            <input type="text" class="form-control" ng-model="model.rootname" />
+        </div>
+    </div>
+
+    <div ng-controller="ssPart4_1Controller" ng-init="initialze()" class="container">
+        <h1>Root Scope Example in another controller:</h1>
+        <div class="form-group">
+            <label>Root Scope Value : </label>
+            <input type="text" class="form-control" ng-model="model.rootname" />
+        </div>
+    </div>-->
+
+    <!--http service example-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$http Example:</h1>
+        <div class="form-group">
+            <label>Reading data from server : </label>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in models">{{item}}</li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <label>Posting data to server : </label>
+            <button class="btn btn-primary" ng-click="PostData()">Post</button>
+        </div>
+    </div>-->
+
+    <!--Filter examples-->
+    <!--currency-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - Currency Example:</h1>
+        <div class="form-group">
+            <label>Filter - Currency (default) : </label>
+            <span>{{currencyvalue | currency}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Currency (custom currency symbol) : </label>
+            <span>{{currencyvalue | currency : '&#165;' : 4}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Currency (custom currency symbol) : </label>
+            <span>{{currencyvalue | currency : '&#163;' : 3}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Currency (custom currency symbol) : </label>
+            <span>{{currencyvalue | currency : '' : 2}}</span>
+        </div>
+    </div>-->
+
+    <!--date-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - Date Example:</h1>
+        <div class="form-group">
+            <label>Filter - Date (default) : </label>
+            <span>{{datevalue | date}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Date (customize - medium) : </label>
+            <span>{{datevalue | date : 'medium'}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Date (customize - dd/MM/yyyy) : </label>
+            <span>{{datevalue | date : 'dd/MM/yyyy'}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Date (customize - MMM dd, yyyy) : </label>
+            <span>{{datevalue | date : 'MMM dd, yyyy'}}</span>
+        </div>
+        <div class="form-group">
+            <label>Filter - Date (customize - MMMM dd, yyyy) : </label>
+            <span>{{datevalue | date : 'MMMM dd, yyyy'}}</span>
+        </div>
+    </div>-->
+
+    <!--filter-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter Example:</h1>
+        <div class="form-group">
+            <label>Filter by : </label>
+            <input type="text" class="form-control" ng-model="search" />
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in models | filter:search">{{item}}</li>
+            </ul>
+        </div>
+    </div>-->
+
+    <!--JSON-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - Date Example:</h1>
+        <div class="form-group">
+            <label>Filter - JSON Formate : </label>
+            <pre>{{jsonvalue | json}}</pre>
+        </div>
+    </div>-->
+
+    <!--Limit To-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - LimitTo Example:</h1>
+        <div>
+            <label>Filter - limitTo : </label>
+            <div class="form-group">
+                <label>Limit Count</label>
+                <input class="form-control" type="number" ng-model="limit" />
+            </div>
+            <div class="form-group">
+                <label>Start index</label>
+                <input class="form-control" type="number" ng-model="startIndex" />
+            </div>
+            <div class="form-group">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in models | limitTo : limit : startIndex">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>-->
+
+    <!--lower case-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - lowercase Example:</h1>
+        <div class="form-group">
+            <label>Filter - lowercase</label>
+            <input type="text" class="form-control" ng-model="lowercasevalue" />
+        </div>
+        <p>{{lowercasevalue | lowercase}}</p>
+    </div>-->
+
+    <!--number-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - number Example:</h1>
+        <div class="form-group">
+            <label>Filter - number</label>
+            <input type="text" class="form-control" ng-model="numbervalue" />
+        </div>
+        <p>{{numbervalue | number:4}}</p>
+    </div>-->
+
+    <!--Order by-->
+    <!--<div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - orderBy Example:</h1>
+        <div class="form-group">
+            <label>Filter - orderBy : </label>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in models | orderBy">{{item}}</li>
+            </ul>
+        </div>
+    </div>-->
+
+    <!--Upper case-->
+    <div ng-controller="ssPart4Controller" ng-init="initialze()" class="container">
+        <h1>$filter - uppercase Example:</h1>
+        <div class="form-group">
+            <label>Filter - uppercase</label>
+            <input type="text" class="form-control" ng-model="uppercasevalue" />
+        </div>
+        <p>{{uppercasevalue | uppercase}}</p>
+    </div>
+
+</body>
+</html>
