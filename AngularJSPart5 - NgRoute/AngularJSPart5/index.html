@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SS - AngularJS - Part 5</title>
+    <meta charset="utf-8" />
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+    <div class="container-fluid" ng-controller="ssPart5Controller" ng-init="init()">
+        <div class="row">
+            <h1>Home Page</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active':PageIndex==0}" href="#!/" ng-click="loadPage(0)">Default Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active':PageIndex==1}" href="#!page1" ng-click="loadPage(1)">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active':PageIndex==2}" href="#!page2/" ng-click="loadPage(2)">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active':PageIndex==3}" href="#!page3/" ng-click="loadPage(3)">Page 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ng-class="{'active':PageIndex==-1}" href="#!nothing" ng-click="loadPage(-1)">Otherwise</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

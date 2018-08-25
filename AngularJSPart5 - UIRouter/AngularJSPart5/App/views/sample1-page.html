@@ -1,0 +1,22 @@
+﻿<div class="row">
+    <h2>{{message}}</h2>
+    <p>Received parameter 1 value : {{param1}}</p>
+    <p>Received parameter 2 value : {{param2}}</p>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Select Param 2</label>
+            <select class="form-control" ng-model="param1">
+                <option value="10">Value 10</option>
+                <option value="20">Value 20</option>
+                <option value="30">Value 30</option>
+                <option value="40">Value 40</option>
+                <option value="50">Value 50</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <button ng-click="GotoAnotherState()">Go to sample 2</button>
+    </div>
+</div>

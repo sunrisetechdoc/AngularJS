@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SS - AngularJS - Part 5</title>
+    <meta charset="utf-8" />
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="assets/js/angular-ui-router.min.js"></script>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body ng-app="ssApp">
+    <script src="App/app.js"></script>
+    <script src="App/controllers/controllers.js"></script>
+    <div class="container-fluid" ng-controller="ssPart5Controller" ng-init="init()">
+        <div class="row">
+            <h1>Index Page</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="dashboard">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
