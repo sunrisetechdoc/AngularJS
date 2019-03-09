@@ -1,0 +1,32 @@
+﻿<div class="container" ng-init="intialize()">
+    <div class="row">
+        <h3>Customized Custom Directives</h3>
+    </div>
+    <div class="lg-col-12">
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Movie Name</label>
+            </div>
+            <div class="col-lg-3">
+                <label>Year</label>
+            </div>
+            <div class="col-lg-4">
+                <label>Casting</label>
+            </div>
+            <div class="col-lg-1">
+                <button class="btn btn-default" ng-click="AddNewMovie()">Add</button>
+            </div>
+        </div>
+        <div ng-repeat="movie in movies">
+            <custom-one-directive ng-model="movie" class="row"></custom-one-directive>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <button class="btn btn-success" ng-click="Save()">Save</button>
+        </div>
+        <div class="col-lg-10">
+            <pre>{{SaveModel | json}}</pre>
+        </div>
+    </div>
+</div>
